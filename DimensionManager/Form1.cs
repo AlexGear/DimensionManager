@@ -14,13 +14,9 @@ namespace DimensionManager
     {
         public Form1()
         {
-            
             InitializeComponent();
-        }
+            axisSelectCombo.SelectedIndex = 0;
 
-        private void coordsBox1_ValueChanged(CoordsBox obj)
-        {
-            Console.WriteLine(obj.Vector);
         }
     }
 }
