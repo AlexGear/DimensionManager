@@ -30,17 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.axisSelectCombo = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.axisSelectCombo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
             this.rearJack = new DimensionManager.CoordsBox();
             this.masterAntBox = new DimensionManager.CoordsBox();
             this.remoteAntBox = new DimensionManager.CoordsBox();
@@ -50,13 +51,8 @@
             this.frontLeftJack = new DimensionManager.CoordsBox();
             this.axisBBox = new DimensionManager.CoordsBox();
             this.axisABox = new DimensionManager.CoordsBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.selectFolderButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.pathLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -83,16 +79,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Задаваемая ось";
             // 
-            // axisSelectCombo
+            // label3
             // 
-            this.axisSelectCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.axisSelectCombo.Items.AddRange(new object[] {
-            "X",
-            "Y"});
-            this.axisSelectCombo.Location = new System.Drawing.Point(148, 23);
-            this.axisSelectCombo.Name = "axisSelectCombo";
-            this.axisSelectCombo.Size = new System.Drawing.Size(116, 21);
-            this.axisSelectCombo.TabIndex = 2;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Точка B";
             // 
             // label2
             // 
@@ -103,14 +97,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Точка A";
             // 
-            // label3
+            // axisSelectCombo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Точка B";
+            this.axisSelectCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.axisSelectCombo.Items.AddRange(new object[] {
+            "X",
+            "Y"});
+            this.axisSelectCombo.Location = new System.Drawing.Point(148, 23);
+            this.axisSelectCombo.Name = "axisSelectCombo";
+            this.axisSelectCombo.Size = new System.Drawing.Size(116, 21);
+            this.axisSelectCombo.TabIndex = 2;
             // 
             // label4
             // 
@@ -153,32 +149,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Координаты точек";
             // 
-            // label6
+            // label10
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 79);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Буровой став";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 105);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Ось поворота мачты";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 131);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(138, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Передний левый домкрат";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 183);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Задний домкрат";
             // 
             // label9
             // 
@@ -189,14 +167,42 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Передний правый домкрат";
             // 
-            // label10
+            // label8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 183);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Задний домкрат";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(138, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Передний левый домкрат";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 105);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Ось поворота мачты";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 79);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Буровой став";
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(12, 340);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(109, 23);
+            this.saveButton.TabIndex = 1;
+            this.saveButton.Text = "Сохранить";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // rearJack
             // 
@@ -288,60 +294,22 @@
             this.axisABox.Y = 0F;
             this.axisABox.Z = 0F;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.pathLabel);
-            this.groupBox3.Controls.Add(this.saveButton);
-            this.groupBox3.Controls.Add(this.selectFolderButton);
-            this.groupBox3.Location = new System.Drawing.Point(12, 340);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(579, 80);
-            this.groupBox3.TabIndex = 14;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Сохранение";
-            // 
-            // selectFolderButton
-            // 
-            this.selectFolderButton.Location = new System.Drawing.Point(9, 19);
-            this.selectFolderButton.Name = "selectFolderButton";
-            this.selectFolderButton.Size = new System.Drawing.Size(109, 23);
-            this.selectFolderButton.TabIndex = 0;
-            this.selectFolderButton.Text = "Выбрать папку...";
-            this.selectFolderButton.UseVisualStyleBackColor = true;
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(9, 48);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 1;
-            this.saveButton.Text = "Сохранить";
-            this.saveButton.UseVisualStyleBackColor = true;
-            // 
-            // pathLabel
-            // 
-            this.pathLabel.Location = new System.Drawing.Point(124, 24);
-            this.pathLabel.Name = "pathLabel";
-            this.pathLabel.Size = new System.Drawing.Size(432, 47);
-            this.pathLabel.TabIndex = 2;
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 434);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(603, 370);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,10 +338,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private CoordsBox rearJack;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label pathLabel;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button selectFolderButton;
     }
 }
 

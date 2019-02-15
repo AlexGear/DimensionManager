@@ -18,6 +18,23 @@ namespace DimensionManager
             axisSelectCombo.SelectedIndex = 0;
 
         }
-    }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new SaveFileDialog())
+            {
+                dialog.Filter = "XML File | *.xml";
+                if (DialogResult.OK != dialog.ShowDialog(this))
+                {
+                    return;
+                }
+                Save(dialog.FileName);
+            }
+        }
+
+        private void Save(string fileName)
+        {
+            Console.WriteLine(fileName);
+        }
     }
 }
