@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 7);
+            this.label1.Location = new System.Drawing.Point(4, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(14, 13);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // xBox
             // 
-            this.xBox.Location = new System.Drawing.Point(24, 3);
+            this.xBox.Location = new System.Drawing.Point(24, 0);
             this.xBox.Name = "xBox";
             this.xBox.Size = new System.Drawing.Size(92, 20);
             this.xBox.TabIndex = 1;
@@ -61,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(144, 7);
+            this.label2.Location = new System.Drawing.Point(144, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // yBox
             // 
-            this.yBox.Location = new System.Drawing.Point(164, 3);
+            this.yBox.Location = new System.Drawing.Point(164, 0);
             this.yBox.Name = "yBox";
             this.yBox.Size = new System.Drawing.Size(92, 20);
             this.yBox.TabIndex = 3;
@@ -80,7 +80,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(294, 7);
+            this.label3.Location = new System.Drawing.Point(294, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             // zBox
             // 
-            this.zBox.Location = new System.Drawing.Point(314, 3);
+            this.zBox.Location = new System.Drawing.Point(314, 0);
             this.zBox.Name = "zBox";
             this.zBox.Size = new System.Drawing.Size(92, 20);
             this.zBox.TabIndex = 5;
@@ -111,7 +111,7 @@
             this.Controls.Add(this.xBox);
             this.Controls.Add(this.label1);
             this.Name = "CoordsBox";
-            this.Size = new System.Drawing.Size(414, 27);
+            this.Size = new System.Drawing.Size(414, 20);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
