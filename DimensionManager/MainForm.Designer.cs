@@ -42,13 +42,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
-            this.rearJack = new DimensionManager.CoordsBox();
+            this.rearJackBox = new DimensionManager.CoordsBox();
             this.masterAntBox = new DimensionManager.CoordsBox();
             this.remoteAntBox = new DimensionManager.CoordsBox();
             this.drillingRigBox = new DimensionManager.CoordsBox();
-            this.frontRightJack = new DimensionManager.CoordsBox();
+            this.frontRightJackBox = new DimensionManager.CoordsBox();
             this.mastBox = new DimensionManager.CoordsBox();
-            this.frontLeftJack = new DimensionManager.CoordsBox();
+            this.frontLeftJackBox = new DimensionManager.CoordsBox();
             this.axisBBox = new DimensionManager.CoordsBox();
             this.axisABox = new DimensionManager.CoordsBox();
             this.groupBox1.SuspendLayout();
@@ -129,7 +129,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.rearJack);
+            this.groupBox2.Controls.Add(this.rearJackBox);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label8);
@@ -139,9 +139,9 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.remoteAntBox);
             this.groupBox2.Controls.Add(this.drillingRigBox);
-            this.groupBox2.Controls.Add(this.frontRightJack);
+            this.groupBox2.Controls.Add(this.frontRightJackBox);
             this.groupBox2.Controls.Add(this.mastBox);
-            this.groupBox2.Controls.Add(this.frontLeftJack);
+            this.groupBox2.Controls.Add(this.frontLeftJackBox);
             this.groupBox2.Location = new System.Drawing.Point(12, 122);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(579, 212);
@@ -204,15 +204,15 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // rearJack
+            // rearJackBox
             // 
-            this.rearJack.Location = new System.Drawing.Point(148, 181);
-            this.rearJack.Name = "rearJack";
-            this.rearJack.Size = new System.Drawing.Size(425, 20);
-            this.rearJack.TabIndex = 18;
-            this.rearJack.X = 0F;
-            this.rearJack.Y = 0F;
-            this.rearJack.Z = 0F;
+            this.rearJackBox.Location = new System.Drawing.Point(148, 181);
+            this.rearJackBox.Name = "rearJackBox";
+            this.rearJackBox.Size = new System.Drawing.Size(425, 20);
+            this.rearJackBox.TabIndex = 18;
+            this.rearJackBox.X = 0F;
+            this.rearJackBox.Y = 0F;
+            this.rearJackBox.Z = 0F;
             // 
             // masterAntBox
             // 
@@ -244,15 +244,15 @@
             this.drillingRigBox.Y = 0F;
             this.drillingRigBox.Z = 0F;
             // 
-            // frontRightJack
+            // frontRightJackBox
             // 
-            this.frontRightJack.Location = new System.Drawing.Point(148, 155);
-            this.frontRightJack.Name = "frontRightJack";
-            this.frontRightJack.Size = new System.Drawing.Size(425, 20);
-            this.frontRightJack.TabIndex = 12;
-            this.frontRightJack.X = 0F;
-            this.frontRightJack.Y = 0F;
-            this.frontRightJack.Z = 0F;
+            this.frontRightJackBox.Location = new System.Drawing.Point(148, 155);
+            this.frontRightJackBox.Name = "frontRightJackBox";
+            this.frontRightJackBox.Size = new System.Drawing.Size(425, 20);
+            this.frontRightJackBox.TabIndex = 12;
+            this.frontRightJackBox.X = 0F;
+            this.frontRightJackBox.Y = 0F;
+            this.frontRightJackBox.Z = 0F;
             // 
             // mastBox
             // 
@@ -264,15 +264,15 @@
             this.mastBox.Y = 0F;
             this.mastBox.Z = 0F;
             // 
-            // frontLeftJack
+            // frontLeftJackBox
             // 
-            this.frontLeftJack.Location = new System.Drawing.Point(148, 129);
-            this.frontLeftJack.Name = "frontLeftJack";
-            this.frontLeftJack.Size = new System.Drawing.Size(425, 20);
-            this.frontLeftJack.TabIndex = 11;
-            this.frontLeftJack.X = 0F;
-            this.frontLeftJack.Y = 0F;
-            this.frontLeftJack.Z = 0F;
+            this.frontLeftJackBox.Location = new System.Drawing.Point(148, 129);
+            this.frontLeftJackBox.Name = "frontLeftJackBox";
+            this.frontLeftJackBox.Size = new System.Drawing.Size(425, 20);
+            this.frontLeftJackBox.TabIndex = 11;
+            this.frontLeftJackBox.X = 0F;
+            this.frontLeftJackBox.Y = 0F;
+            this.frontLeftJackBox.Z = 0F;
             // 
             // axisBBox
             // 
@@ -329,15 +329,15 @@
         private CoordsBox remoteAntBox;
         private CoordsBox drillingRigBox;
         private CoordsBox mastBox;
-        private CoordsBox frontLeftJack;
-        private CoordsBox frontRightJack;
+        private CoordsBox frontLeftJackBox;
+        private CoordsBox frontRightJackBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
-        private CoordsBox rearJack;
+        private CoordsBox rearJackBox;
         private System.Windows.Forms.Button saveButton;
     }
 }
