@@ -14,10 +14,17 @@ namespace DimensionManager
 {
     public partial class CoordsBox : UserControl
     {
+        private HashSet<char> allowedChars = new HashSet<char>
+        {
+            ',',
+            '.',
+            '-'
+        };
+
         private float x = 0;
         private float y = 0;
         private float z = 0;
-
+        
         public float X
         {
             get { return x; }
@@ -84,6 +91,14 @@ namespace DimensionManager
                 e.Cancel = true;
                 errorProvider.SetError(textBox, "Неверный формат");
             }
+        }
+
+        private void coordBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            if (char.IsDigit(c) || char.IsControl(c) || allowedChars.Contains(c))
+                return;
+            e.Handled = true;
         }
     }
 }

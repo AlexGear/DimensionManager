@@ -56,6 +56,7 @@
             this.xBox.TabIndex = 1;
             this.xBox.Tag = "X";
             this.xBox.Text = "0";
+            this.xBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.coordBox_KeyPress);
             this.xBox.Validating += new System.ComponentModel.CancelEventHandler(this.coordBox_Validating);
             // 
             // label2
@@ -75,6 +76,7 @@
             this.yBox.TabIndex = 3;
             this.yBox.Tag = "Y";
             this.yBox.Text = "0";
+            this.yBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.coordBox_KeyPress);
             this.yBox.Validating += new System.ComponentModel.CancelEventHandler(this.coordBox_Validating);
             // 
             // label3
@@ -94,6 +96,7 @@
             this.zBox.TabIndex = 5;
             this.zBox.Tag = "Z";
             this.zBox.Text = "0";
+            this.zBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.coordBox_KeyPress);
             this.zBox.Validating += new System.ComponentModel.CancelEventHandler(this.coordBox_Validating);
             // 
             // errorProvider
