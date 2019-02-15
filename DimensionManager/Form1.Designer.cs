@@ -33,10 +33,14 @@
             // 
             // coordsBox1
             // 
-            this.coordsBox1.Location = new System.Drawing.Point(57, 31);
+            this.coordsBox1.Location = new System.Drawing.Point(94, 12);
             this.coordsBox1.Name = "coordsBox1";
             this.coordsBox1.Size = new System.Drawing.Size(414, 27);
             this.coordsBox1.TabIndex = 0;
+            this.coordsBox1.X = 0F;
+            this.coordsBox1.Y = 0F;
+            this.coordsBox1.Z = 0F;
+            this.coordsBox1.ValueChanged += new System.Action<DimensionManager.CoordsBox>(this.coordsBox1_ValueChanged);
             // 
             // Form1
             // 

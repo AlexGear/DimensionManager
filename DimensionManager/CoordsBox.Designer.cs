@@ -54,6 +54,7 @@
             this.xBox.Name = "xBox";
             this.xBox.Size = new System.Drawing.Size(92, 20);
             this.xBox.TabIndex = 1;
+            this.xBox.Tag = "X";
             this.xBox.Text = "0";
             this.xBox.Validating += new System.ComponentModel.CancelEventHandler(this.coordBox_Validating);
             // 
@@ -72,6 +73,7 @@
             this.yBox.Name = "yBox";
             this.yBox.Size = new System.Drawing.Size(92, 20);
             this.yBox.TabIndex = 3;
+            this.yBox.Tag = "Y";
             this.yBox.Text = "0";
             this.yBox.Validating += new System.ComponentModel.CancelEventHandler(this.coordBox_Validating);
             // 
@@ -90,6 +92,7 @@
             this.zBox.Name = "zBox";
             this.zBox.Size = new System.Drawing.Size(92, 20);
             this.zBox.TabIndex = 5;
+            this.zBox.Tag = "Z";
             this.zBox.Text = "0";
             this.zBox.Validating += new System.ComponentModel.CancelEventHandler(this.coordBox_Validating);
             // 

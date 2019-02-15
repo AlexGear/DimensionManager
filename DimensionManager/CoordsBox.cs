@@ -8,12 +8,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Numerics;
 
 namespace DimensionManager
 {
     public partial class CoordsBox : UserControl
     {
-        public System.Numerics.
+        private float x = 0;
+        private float y = 0;
+        private float z = 0;
+
+        public float X
+        {
+            get { return x; }
+            set
+            {
+                x = value;
+                ValueChanged?.Invoke(this);
+            }
+        }
+        public float Y
+        {
+            get { return y; }
+            set
+            {
+                y = value;
+                ValueChanged?.Invoke(this);
+            }
+        }
+        public float Z
+        {
+            get { return z; }
+            set
+            {
+                z = value;
+                ValueChanged?.Invoke(this);
+            }
+        }
+
+        public event Action<CoordsBox> ValueChanged;
+
+        public Vector3 Vector => new Vector3(x, y, z);
 
         public CoordsBox()
         {
@@ -36,6 +71,13 @@ namespace DimensionManager
                 var value = float.Parse(commasReplaced, culture);
                 textBox.Text = value.ToString(culture);
                 errorProvider.SetError(textBox, null);
+
+                switch(textBox.Tag)
+                {
+                    case "X": X = value; break;
+                    case "Y": Y = value; break;
+                    case "Z": Z = value; break;
+                }
             }
             catch(FormatException)
             {

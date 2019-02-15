@@ -17,5 +17,10 @@ namespace DimensionManager
             
             InitializeComponent();
         }
+
+        private void coordsBox1_ValueChanged(CoordsBox obj)
+        {
+            Console.WriteLine(obj.Vector);
+        }
     }
 }
