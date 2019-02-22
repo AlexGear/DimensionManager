@@ -67,9 +67,9 @@ namespace DimensionManager
             return new CoordianteSystem(masterAntBox.Vector, axisX, axisY, axisZ);
         }
         /*
-        private string VectorToXML(Vector3 vector)
-        {
+private string VectorToXML(Vector3 vector)
+{
 
-        }*/
+}*/
     }
 }

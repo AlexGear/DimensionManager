@@ -14,13 +14,6 @@ namespace DimensionManager
 {
     public partial class CoordsBox : UserControl
     {
-        private HashSet<char> allowedChars = new HashSet<char>
-        {
-            ',',
-            '.',
-            '-'
-        };
-
         private float x = 0;
         private float y = 0;
         private float z = 0;
@@ -62,43 +55,12 @@ namespace DimensionManager
             InitializeComponent();
         }
 
-        private void coordBox_Validating(object sender, CancelEventArgs e)
-        {
-            var textBox = (TextBox)sender;
-            if(string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                textBox.Text = "0";
-                return;
+        private void coordBox_ValueChanged(DecimalBox box) {
+            switch(box.Tag) {
+                case "X": X = box.Value; break;
+                case "Y": Y = box.Value; break;
+                case "Z": Z = box.Value; break;
             }
-
-            try
-            {
-                var culture = CultureInfo.InvariantCulture;
-                var commasReplaced = textBox.Text.Replace(',', '.');
-                var value = float.Parse(commasReplaced, culture);
-                textBox.Text = value.ToString(culture);
-                errorProvider.SetError(textBox, null);
-
-                switch(textBox.Tag)
-                {
-                    case "X": X = value; break;
-                    case "Y": Y = value; break;
-                    case "Z": Z = value; break;
-                }
-            }
-            catch(FormatException)
-            {
-                e.Cancel = true;
-                errorProvider.SetError(textBox, "Неверный формат");
-            }
-        }
-
-        private void coordBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char c = e.KeyChar;
-            if (char.IsDigit(c) || char.IsControl(c) || allowedChars.Contains(c))
-                return;
-            e.Handled = true;
         }
     }
 }

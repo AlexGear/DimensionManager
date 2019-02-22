@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.xBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.yBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.zBox = new System.Windows.Forms.TextBox();
+            this.zBox = new DimensionManager.DecimalBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.yBox = new DimensionManager.DecimalBox();
+            this.xBox = new DimensionManager.DecimalBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,17 +48,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "X";
             // 
-            // xBox
-            // 
-            this.xBox.Location = new System.Drawing.Point(24, 0);
-            this.xBox.Name = "xBox";
-            this.xBox.Size = new System.Drawing.Size(92, 20);
-            this.xBox.TabIndex = 1;
-            this.xBox.Tag = "X";
-            this.xBox.Text = "0";
-            this.xBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.coordBox_KeyPress);
-            this.xBox.Validating += new System.ComponentModel.CancelEventHandler(this.coordBox_Validating);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -67,17 +56,6 @@
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Y";
-            // 
-            // yBox
-            // 
-            this.yBox.Location = new System.Drawing.Point(164, 0);
-            this.yBox.Name = "yBox";
-            this.yBox.Size = new System.Drawing.Size(92, 20);
-            this.yBox.TabIndex = 3;
-            this.yBox.Tag = "Y";
-            this.yBox.Text = "0";
-            this.yBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.coordBox_KeyPress);
-            this.yBox.Validating += new System.ComponentModel.CancelEventHandler(this.coordBox_Validating);
             // 
             // label3
             // 
@@ -91,17 +69,42 @@
             // zBox
             // 
             this.zBox.Location = new System.Drawing.Point(314, 0);
+            this.zBox.MaximumSize = new System.Drawing.Size(9999, 20);
+            this.zBox.MinimumSize = new System.Drawing.Size(0, 20);
             this.zBox.Name = "zBox";
             this.zBox.Size = new System.Drawing.Size(92, 20);
             this.zBox.TabIndex = 5;
             this.zBox.Tag = "Z";
-            this.zBox.Text = "0";
-            this.zBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.coordBox_KeyPress);
-            this.zBox.Validating += new System.ComponentModel.CancelEventHandler(this.coordBox_Validating);
+            this.zBox.Value = 0F;
+            this.zBox.ValueChanged += new System.Action<DimensionManager.DecimalBox>(this.coordBox_ValueChanged);
             // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // yBox
+            // 
+            this.yBox.Location = new System.Drawing.Point(164, 0);
+            this.yBox.MaximumSize = new System.Drawing.Size(9999, 20);
+            this.yBox.MinimumSize = new System.Drawing.Size(0, 20);
+            this.yBox.Name = "yBox";
+            this.yBox.Size = new System.Drawing.Size(92, 20);
+            this.yBox.TabIndex = 3;
+            this.yBox.Tag = "Y";
+            this.yBox.Value = 0F;
+            this.yBox.ValueChanged += new System.Action<DimensionManager.DecimalBox>(this.coordBox_ValueChanged);
+            // 
+            // xBox
+            // 
+            this.xBox.Location = new System.Drawing.Point(24, 0);
+            this.xBox.MaximumSize = new System.Drawing.Size(9999, 20);
+            this.xBox.MinimumSize = new System.Drawing.Size(0, 20);
+            this.xBox.Name = "xBox";
+            this.xBox.Size = new System.Drawing.Size(92, 20);
+            this.xBox.TabIndex = 1;
+            this.xBox.Tag = "X";
+            this.xBox.Value = 0F;
+            this.xBox.ValueChanged += new System.Action<DimensionManager.DecimalBox>(this.coordBox_ValueChanged);
             // 
             // CoordsBox
             // 
@@ -124,11 +127,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox xBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox yBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox zBox;
+        private DimensionManager.DecimalBox zBox;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private DimensionManager.DecimalBox yBox;
+        private DimensionManager.DecimalBox xBox;
     }
 }
