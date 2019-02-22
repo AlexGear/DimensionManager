@@ -14,11 +14,10 @@ namespace DimensionManager
     public partial class DecimalBox : UserControl
     {
         private static readonly Color ErrorColor = Color.FromArgb(255, 100, 100);
-        private static List<char> allowedChars = new List<char>
+        private static List<char> DecimalPoints = new List<char>
         {
             ',',
             '.',
-            '-'
         };
 
         private float value;
@@ -67,9 +66,19 @@ namespace DimensionManager
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char c = e.KeyChar;
-            if (char.IsDigit(c) || char.IsControl(c) || allowedChars.Contains(c))
+            if (char.IsDigit(c) || char.IsControl(c))
                 return;
+            if (c == '-' && !textBox.Text.Contains(c))
+                return;
+            if (IsDecimalPoint(c) && !textBox.Text.Any(IsDecimalPoint))
+                return;
+
             e.Handled = true;
+        }
+
+        private static bool IsDecimalPoint(char c)
+        {
+            return DecimalPoints.Contains(c);
         }
     }
 }
