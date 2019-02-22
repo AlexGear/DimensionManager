@@ -36,24 +36,21 @@ namespace DimensionManager
         private void Save(string fileName)
         {
             CoordianteSystem cs = CalcCoordinateSystem();
-            Vector3 master = cs.GetLocalPoint(masterAntBox.Vector);
-            Vector3 remote = cs.GetLocalPoint(remoteAntBox.Vector);
-            Vector3 drillingRig = cs.GetLocalPoint(drillingRigBox.Vector);
-            Vector3 mast = cs.GetLocalPoint(mastBox.Vector);
+            Vector3 masterAnt = cs.GetLocalPoint(masterAntBox.Vector);
+            Vector3 azimuthAnt = cs.GetLocalPoint(azimuthAntBox.Vector);
+            Vector3 bitOffset = cs.GetLocalPoint(bitOffsetBox.Vector);
+            Vector3 mastRotateOffset = cs.GetLocalPoint(mastRotateOffsetBox.Vector);
             Vector3 frontLeftJack = cs.GetLocalPoint(frontLeftJackBox.Vector);
             Vector3 frontRightJack = cs.GetLocalPoint(frontRightJackBox.Vector);
             Vector3 rearJack = cs.GetLocalPoint(rearJackBox.Vector);
 
-            var sb = new StringBuilder();
-            sb.Append("<?xml version=\"1.0\"?>");
-            
         }
 
         private CoordianteSystem CalcCoordinateSystem()
         {
             Vector3 axisX, axisY;
             var specifiedAxis = Vector3.Normalize(axisBBox.Vector - axisABox.Vector);
-            if(axisSelectCombo.SelectedIndex == 0)
+            if (axisSelectCombo.SelectedIndex == 0)
             {
                 axisX = specifiedAxis;
                 axisY = Vector3.Normalize(new Vector3(-axisX.Y, axisX.X, 0));

@@ -17,7 +17,7 @@ namespace DimensionManager
         private float x = 0;
         private float y = 0;
         private float z = 0;
-        
+
         public float X
         {
             get { return x; }
@@ -55,8 +55,10 @@ namespace DimensionManager
             InitializeComponent();
         }
 
-        private void coordBox_ValueChanged(DecimalBox box) {
-            switch(box.Tag) {
+        private void coordBox_ValueChanged(DecimalBox box)
+        {
+            switch (box.Tag)
+            {
                 case "X": X = box.Value; break;
                 case "Y": Y = box.Value; break;
                 case "Z": Z = box.Value; break;
