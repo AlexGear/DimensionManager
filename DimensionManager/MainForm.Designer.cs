@@ -31,29 +31,30 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.axisBBox = new DimensionManager.CoordsBox();
             this.label2 = new System.Windows.Forms.Label();
             this.axisSelectCombo = new System.Windows.Forms.ComboBox();
-            this.axisABox = new DimensionManager.CoordsBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.rearJackBox = new DimensionManager.CoordsBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.masterAntBox = new DimensionManager.CoordsBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.platformOffsetZBox = new DimensionManager.DecimalBox();
+            this.backJackBox = new DimensionManager.CoordsBox();
+            this.masterAntBox = new DimensionManager.CoordsBox();
             this.azimuthAntBox = new DimensionManager.CoordsBox();
             this.bitOffsetBox = new DimensionManager.CoordsBox();
             this.frontRightJackBox = new DimensionManager.CoordsBox();
             this.mastRotateOffsetBox = new DimensionManager.CoordsBox();
             this.frontLeftJackBox = new DimensionManager.CoordsBox();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.platformOffsetZBox = new DimensionManager.DecimalBox();
+            this.axisBBox = new DimensionManager.CoordsBox();
+            this.axisABox = new DimensionManager.CoordsBox();
+            this.savedNotificationLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -92,16 +93,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Точка B";
             // 
-            // axisBBox
-            // 
-            this.axisBBox.Location = new System.Drawing.Point(148, 75);
-            this.axisBBox.Name = "axisBBox";
-            this.axisBBox.Size = new System.Drawing.Size(425, 20);
-            this.axisBBox.TabIndex = 4;
-            this.axisBBox.X = 0F;
-            this.axisBBox.Y = 0F;
-            this.axisBBox.Z = 0F;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -120,17 +111,7 @@
             this.axisSelectCombo.Location = new System.Drawing.Point(148, 23);
             this.axisSelectCombo.Name = "axisSelectCombo";
             this.axisSelectCombo.Size = new System.Drawing.Size(116, 21);
-            this.axisSelectCombo.TabIndex = 2;
-            // 
-            // axisABox
-            // 
-            this.axisABox.Location = new System.Drawing.Point(148, 50);
-            this.axisABox.Name = "axisABox";
-            this.axisABox.Size = new System.Drawing.Size(425, 20);
-            this.axisABox.TabIndex = 0;
-            this.axisABox.X = 0F;
-            this.axisABox.Y = 0F;
-            this.axisABox.Z = 0F;
+            this.axisSelectCombo.TabIndex = 0;
             // 
             // label4
             // 
@@ -153,7 +134,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.rearJackBox);
+            this.groupBox2.Controls.Add(this.backJackBox);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label8);
@@ -182,16 +163,6 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Задний домкрат";
             // 
-            // rearJackBox
-            // 
-            this.rearJackBox.Location = new System.Drawing.Point(148, 181);
-            this.rearJackBox.Name = "rearJackBox";
-            this.rearJackBox.Size = new System.Drawing.Size(425, 20);
-            this.rearJackBox.TabIndex = 18;
-            this.rearJackBox.X = 0F;
-            this.rearJackBox.Y = 0F;
-            this.rearJackBox.Z = 0F;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -209,16 +180,6 @@
             this.label8.Size = new System.Drawing.Size(138, 13);
             this.label8.TabIndex = 16;
             this.label8.Text = "Передний левый домкрат";
-            // 
-            // masterAntBox
-            // 
-            this.masterAntBox.Location = new System.Drawing.Point(148, 25);
-            this.masterAntBox.Name = "masterAntBox";
-            this.masterAntBox.Size = new System.Drawing.Size(425, 20);
-            this.masterAntBox.TabIndex = 6;
-            this.masterAntBox.X = 0F;
-            this.masterAntBox.Y = 0F;
-            this.masterAntBox.Z = 0F;
             // 
             // label7
             // 
@@ -238,20 +199,80 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Буровой став";
             // 
-            // remoteAntBox
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(12, 406);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(109, 23);
+            this.saveButton.TabIndex = 1;
+            this.saveButton.Text = "Сохранить";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.platformOffsetZBox);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Location = new System.Drawing.Point(12, 341);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(579, 56);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Другие параметры";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(107, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Высота платформы";
+            // 
+            // platformOffsetZBox
+            // 
+            this.platformOffsetZBox.Location = new System.Drawing.Point(171, 22);
+            this.platformOffsetZBox.MaximumSize = new System.Drawing.Size(9999, 20);
+            this.platformOffsetZBox.MinimumSize = new System.Drawing.Size(0, 20);
+            this.platformOffsetZBox.Name = "platformOffsetZBox";
+            this.platformOffsetZBox.Size = new System.Drawing.Size(92, 20);
+            this.platformOffsetZBox.TabIndex = 1;
+            this.platformOffsetZBox.Value = 0F;
+            // 
+            // backJackBox
+            // 
+            this.backJackBox.Location = new System.Drawing.Point(148, 181);
+            this.backJackBox.Name = "backJackBox";
+            this.backJackBox.Size = new System.Drawing.Size(425, 20);
+            this.backJackBox.TabIndex = 18;
+            this.backJackBox.X = 0F;
+            this.backJackBox.Y = 0F;
+            this.backJackBox.Z = 0F;
+            // 
+            // masterAntBox
+            // 
+            this.masterAntBox.Location = new System.Drawing.Point(148, 25);
+            this.masterAntBox.Name = "masterAntBox";
+            this.masterAntBox.Size = new System.Drawing.Size(425, 20);
+            this.masterAntBox.TabIndex = 6;
+            this.masterAntBox.X = 0F;
+            this.masterAntBox.Y = 0F;
+            this.masterAntBox.Z = 0F;
+            // 
+            // azimuthAntBox
             // 
             this.azimuthAntBox.Location = new System.Drawing.Point(148, 51);
-            this.azimuthAntBox.Name = "remoteAntBox";
+            this.azimuthAntBox.Name = "azimuthAntBox";
             this.azimuthAntBox.Size = new System.Drawing.Size(425, 20);
             this.azimuthAntBox.TabIndex = 8;
             this.azimuthAntBox.X = 0F;
             this.azimuthAntBox.Y = 0F;
             this.azimuthAntBox.Z = 0F;
             // 
-            // drillingRigBox
+            // bitOffsetBox
             // 
             this.bitOffsetBox.Location = new System.Drawing.Point(148, 77);
-            this.bitOffsetBox.Name = "drillingRigBox";
+            this.bitOffsetBox.Name = "bitOffsetBox";
             this.bitOffsetBox.Size = new System.Drawing.Size(425, 20);
             this.bitOffsetBox.TabIndex = 9;
             this.bitOffsetBox.X = 0F;
@@ -268,10 +289,10 @@
             this.frontRightJackBox.Y = 0F;
             this.frontRightJackBox.Z = 0F;
             // 
-            // mastBox
+            // mastRotateOffsetBox
             // 
             this.mastRotateOffsetBox.Location = new System.Drawing.Point(148, 103);
-            this.mastRotateOffsetBox.Name = "mastBox";
+            this.mastRotateOffsetBox.Name = "mastRotateOffsetBox";
             this.mastRotateOffsetBox.Size = new System.Drawing.Size(425, 20);
             this.mastRotateOffsetBox.TabIndex = 10;
             this.mastRotateOffsetBox.X = 0F;
@@ -288,51 +309,40 @@
             this.frontLeftJackBox.Y = 0F;
             this.frontLeftJackBox.Z = 0F;
             // 
-            // saveButton
+            // axisBBox
             // 
-            this.saveButton.Location = new System.Drawing.Point(12, 465);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(109, 23);
-            this.saveButton.TabIndex = 1;
-            this.saveButton.Text = "Сохранить";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.axisBBox.Location = new System.Drawing.Point(148, 75);
+            this.axisBBox.Name = "axisBBox";
+            this.axisBBox.Size = new System.Drawing.Size(425, 20);
+            this.axisBBox.TabIndex = 4;
+            this.axisBBox.X = 0F;
+            this.axisBBox.Y = 0F;
+            this.axisBBox.Z = 0F;
             // 
-            // groupBox3
+            // axisABox
             // 
-            this.groupBox3.Controls.Add(this.platformOffsetZBox);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Location = new System.Drawing.Point(12, 341);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(579, 118);
-            this.groupBox3.TabIndex = 14;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Другие параметры";
+            this.axisABox.Location = new System.Drawing.Point(148, 50);
+            this.axisABox.Name = "axisABox";
+            this.axisABox.Size = new System.Drawing.Size(425, 20);
+            this.axisABox.TabIndex = 1;
+            this.axisABox.X = 0F;
+            this.axisABox.Y = 0F;
+            this.axisABox.Z = 0F;
             // 
-            // label11
+            // savedNotificationLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 23);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Высота платформы";
-            // 
-            // platformOffsetZBox
-            // 
-            this.platformOffsetZBox.Location = new System.Drawing.Point(172, 23);
-            this.platformOffsetZBox.MaximumSize = new System.Drawing.Size(9999, 20);
-            this.platformOffsetZBox.MinimumSize = new System.Drawing.Size(0, 20);
-            this.platformOffsetZBox.Name = "platformOffsetZBox";
-            this.platformOffsetZBox.Size = new System.Drawing.Size(92, 20);
-            this.platformOffsetZBox.TabIndex = 1;
-            this.platformOffsetZBox.Value = 0F;
+            this.savedNotificationLabel.AutoSize = true;
+            this.savedNotificationLabel.Location = new System.Drawing.Point(140, 411);
+            this.savedNotificationLabel.Name = "savedNotificationLabel";
+            this.savedNotificationLabel.Size = new System.Drawing.Size(0, 13);
+            this.savedNotificationLabel.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 500);
+            this.ClientSize = new System.Drawing.Size(603, 441);
+            this.Controls.Add(this.savedNotificationLabel);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.groupBox2);
@@ -340,7 +350,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "DimensionManager";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -348,6 +358,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -374,11 +385,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
-        private CoordsBox rearJackBox;
+        private CoordsBox backJackBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label11;
         private DecimalBox platformOffsetZBox;
+        private System.Windows.Forms.Label savedNotificationLabel;
     }
 }
 
