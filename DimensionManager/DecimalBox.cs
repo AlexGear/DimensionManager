@@ -13,7 +13,7 @@ namespace DimensionManager
 {
     public partial class DecimalBox : UserControl
     {
-        private const string InvalidFormatMessage = "Неверный формат";
+        private static readonly Color ErrorColor = Color.FromArgb(255, 100, 100);
         private static List<char> allowedChars = new List<char>
         {
             ',',
@@ -53,14 +53,14 @@ namespace DimensionManager
                 var commasReplaced = textBox.Text.Replace(',', '.');
                 var value = float.Parse(commasReplaced, culture);
                 textBox.Text = value.ToString(culture);
-                errorProvider.SetError(textBox, null);
+                textBox.BackColor = SystemColors.Window;
 
                 this.Value = value;
             }
             catch (FormatException)
             {
                 e.Cancel = true;
-                errorProvider.SetError(textBox, InvalidFormatMessage);
+                textBox.BackColor = ErrorColor;
             }
         }
 
