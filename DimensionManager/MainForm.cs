@@ -36,15 +36,17 @@ namespace DimensionManager
         private void Save(string fileName)
         {
             CoordianteSystem cs = CalcCoordinateSystem();
-            var master = cs.GetLocalPoint(masterAntBox.Vector);
-            var remote = cs.GetLocalPoint(remoteAntBox.Vector);
-            var drillingRig = cs.GetLocalPoint(drillingRigBox.Vector);
-            var mast = cs.GetLocalPoint(mastBox.Vector);
-            var frontLeftJack = cs.GetLocalPoint(frontLeftJackBox.Vector);
-            var frontRightJack = cs.GetLocalPoint(frontRightJackBox.Vector);
-            var rearJack = cs.GetLocalPoint(rearJackBox.Vector);
+            Vector3 master = cs.GetLocalPoint(masterAntBox.Vector);
+            Vector3 remote = cs.GetLocalPoint(remoteAntBox.Vector);
+            Vector3 drillingRig = cs.GetLocalPoint(drillingRigBox.Vector);
+            Vector3 mast = cs.GetLocalPoint(mastBox.Vector);
+            Vector3 frontLeftJack = cs.GetLocalPoint(frontLeftJackBox.Vector);
+            Vector3 frontRightJack = cs.GetLocalPoint(frontRightJackBox.Vector);
+            Vector3 rearJack = cs.GetLocalPoint(rearJackBox.Vector);
 
-
+            var sb = new StringBuilder();
+            sb.Append("<?xml version=\"1.0\"?>");
+            
         }
 
         private CoordianteSystem CalcCoordinateSystem()
@@ -64,5 +66,10 @@ namespace DimensionManager
             var axisZ = Vector3.Cross(axisX, axisY);
             return new CoordianteSystem(masterAntBox.Vector, axisX, axisY, axisZ);
         }
+        /*
+        private string VectorToXML(Vector3 vector)
+        {
+
+        }*/
     }
 }
