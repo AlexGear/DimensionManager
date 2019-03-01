@@ -23,7 +23,7 @@ namespace DimensionManager
         private float value;
         public float Value
         {
-            get { return value; }
+            get => value;
             set
             {
                 this.value = value;
@@ -54,7 +54,7 @@ namespace DimensionManager
                 textBox.Text = value.ToString(culture);
                 textBox.BackColor = SystemColors.Window;
 
-                this.Value = value;
+                Value = value;
             }
             catch (FormatException)
             {
@@ -68,10 +68,14 @@ namespace DimensionManager
             char c = e.KeyChar;
             if (char.IsDigit(c) || char.IsControl(c))
                 return;
+
             if (c == '-' && !textBox.Text.Contains(c))
                 return;
+
             if (IsDecimalPoint(c) && !textBox.Text.Any(IsDecimalPoint))
+            {
                 return;
+            }
 
             e.Handled = true;
         }

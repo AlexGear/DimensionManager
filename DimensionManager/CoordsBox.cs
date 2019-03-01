@@ -20,7 +20,7 @@ namespace DimensionManager
 
         public float X
         {
-            get { return x; }
+            get => x;
             set
             {
                 x = value;
@@ -29,7 +29,7 @@ namespace DimensionManager
         }
         public float Y
         {
-            get { return y; }
+            get => y;
             set
             {
                 y = value;
@@ -38,7 +38,7 @@ namespace DimensionManager
         }
         public float Z
         {
-            get { return z; }
+            get => z;
             set
             {
                 z = value;
