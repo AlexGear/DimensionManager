@@ -44,6 +44,7 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.savedNotificationLabel = new System.Windows.Forms.Label();
             this.platformOffsetZBox = new DimensionManager.DecimalBox();
             this.backJackBox = new DimensionManager.CoordsBox();
             this.masterAntBox = new DimensionManager.CoordsBox();
@@ -54,7 +55,6 @@
             this.frontLeftJackBox = new DimensionManager.CoordsBox();
             this.axisBBox = new DimensionManager.CoordsBox();
             this.axisABox = new DimensionManager.CoordsBox();
-            this.savedNotificationLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -108,9 +108,9 @@
             this.axisSelectCombo.Items.AddRange(new object[] {
             "X",
             "Y"});
-            this.axisSelectCombo.Location = new System.Drawing.Point(148, 23);
+            this.axisSelectCombo.Location = new System.Drawing.Point(172, 23);
             this.axisSelectCombo.Name = "axisSelectCombo";
-            this.axisSelectCombo.Size = new System.Drawing.Size(116, 21);
+            this.axisSelectCombo.Size = new System.Drawing.Size(92, 21);
             this.axisSelectCombo.TabIndex = 0;
             // 
             // label4
@@ -203,9 +203,9 @@
             // 
             this.saveButton.Location = new System.Drawing.Point(12, 406);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(109, 23);
+            this.saveButton.Size = new System.Drawing.Size(187, 23);
             this.saveButton.TabIndex = 1;
-            this.saveButton.Text = "Сохранить";
+            this.saveButton.Text = "<save>";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -228,6 +228,14 @@
             this.label11.Size = new System.Drawing.Size(107, 13);
             this.label11.TabIndex = 0;
             this.label11.Text = "Высота платформы";
+            // 
+            // savedNotificationLabel
+            // 
+            this.savedNotificationLabel.AutoSize = true;
+            this.savedNotificationLabel.Location = new System.Drawing.Point(205, 411);
+            this.savedNotificationLabel.Name = "savedNotificationLabel";
+            this.savedNotificationLabel.Size = new System.Drawing.Size(0, 13);
+            this.savedNotificationLabel.TabIndex = 2;
             // 
             // platformOffsetZBox
             // 
@@ -328,14 +336,6 @@
             this.axisABox.X = 0F;
             this.axisABox.Y = 0F;
             this.axisABox.Z = 0F;
-            // 
-            // savedNotificationLabel
-            // 
-            this.savedNotificationLabel.AutoSize = true;
-            this.savedNotificationLabel.Location = new System.Drawing.Point(140, 411);
-            this.savedNotificationLabel.Name = "savedNotificationLabel";
-            this.savedNotificationLabel.Size = new System.Drawing.Size(0, 13);
-            this.savedNotificationLabel.TabIndex = 2;
             // 
             // MainForm
             // 

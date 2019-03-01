@@ -14,27 +14,45 @@ namespace DimensionManager
 {
     public partial class MainForm : Form
     {
+        private const string FileName = "calibration.xml";
         private const string SavedNotificationText = "Успешно сохранено";
         private const int SavedNotificationDuration = 2000;
+
+        private static string SaveFileTitle => $"Сохранить {FileName} в...";
 
         public MainForm()
         {
             InitializeComponent();
             axisSelectCombo.SelectedIndex = 0;
-
+            saveButton.Text = SaveFileTitle;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            using (var dialog = new SaveFileDialog())
+            var dialog = new FolderSelectDialog { Title = SaveFileTitle };
+            if(!dialog.Show())
             {
-                dialog.Filter = "XML File | *.xml";
-                if (DialogResult.OK != dialog.ShowDialog(this))
+                return;
+            }
+            var folder = dialog.FileName;
+            var fullPath = Path.Combine(folder, FileName);
+            if(File.Exists(fullPath))
+            {
+                if (OverrideFilePropmtDialog() != DialogResult.Yes)
                 {
                     return;
                 }
-                Save(dialog.FileName);
             }
+            Save(fullPath);
+        }
+
+        private DialogResult OverrideFilePropmtDialog()
+        {
+            return MessageBox.Show(this,
+                $"Файл {FileName} уже существует.\nВы хотите заменить его?",
+                "Перезаписать существующий файл?",
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Warning);
         }
 
         private void Save(string fileName)

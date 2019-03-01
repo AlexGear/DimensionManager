@@ -69,6 +69,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CoordianteSystem.cs" />
+    <Compile Include="FolderSelectDialog.cs" />
     <EmbeddedResource Include="CoordsBox.resx">
       <DependentUpon>CoordsBox.cs</DependentUpon>
     </EmbeddedResource>
